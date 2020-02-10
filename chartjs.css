@@ -1,0 +1,47 @@
+/ *
+ * Détection de rendu d'élément DOM
+ * https://davidwalsh.name/detect-node-insertion
+ * /
+@keyframes chartjs-render-animation {
+	à partir de {opacité: 0,99; }
+	à {opacité: 1; }
+}
+
+.chartjs-render-monitor {
+	animation: chartjs-render-animation 0.001s;
+}
+
+/ *
+ * Détection de redimensionnement d'élément DOM
+ * https://github.com/marcj/css-element-queries
+ * /
+.chartjs-size-monitor,
+.chartjs-size-monitor-expand,
+.chartjs-size-monitor-shrink {
+	position: absolue;
+	direction: ltr;
+	gauche: 0;
+	en haut: 0;
+	à droite: 0;
+	en bas: 0;
+	débordement caché;
+	événements de pointeur: aucun;
+	visibilité: cachée;
+	z-index: -1;
+}
+
+.chartjs-size-monitor-expand> div {
+	position: absolue;
+	largeur: 1000000px;
+	hauteur: 1000000px;
+	gauche: 0;
+	en haut: 0;
+}
+
+.chartjs-size-monitor-shrink> div {
+	position: absolue;
+	largeur: 200%;
+	hauteur: 200%;
+	gauche: 0;
+	en haut: 0;
+}
